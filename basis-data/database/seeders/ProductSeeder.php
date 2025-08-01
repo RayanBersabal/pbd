@@ -9,6 +9,7 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
+        // Produk dari contoh Anda
         $products = [
             [
                 'name' => 'Nasi Goreng',
@@ -50,5 +51,8 @@ class ProductSeeder extends Seeder
         foreach ($products as $product) {
             Product::create($product);
         }
+
+        // Tambahkan 50 produk lain menggunakan factory
+        Product::factory()->count(15)->create();
     }
 }
